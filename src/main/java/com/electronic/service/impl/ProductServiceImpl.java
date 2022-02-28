@@ -1,6 +1,7 @@
 package com.electronic.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,10 +14,10 @@ public class ProductServiceImpl implements ProductService {
 	
 	@Autowired
 	ProductDAO productDAO;
+
 	@Override
-	public List<Product> findAll() {
-		// TODO Auto-generated method stub
-		return productDAO.findAll();
+	public List<Product> findByCategoryId(Integer id) {
+		return productDAO.findByCategoryId(id);
 	}
 
 }

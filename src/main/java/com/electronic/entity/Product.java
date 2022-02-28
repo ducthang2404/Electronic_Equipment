@@ -31,11 +31,11 @@ public class Product {
 	Double price;
 	
 	@ManyToOne
-	@JoinColumn(name = "providerId")
+	@JoinColumn(name = "providerid")
 	Provider provider;
 	
 	@ManyToOne
-	@JoinColumn(name = "categoryId")
+	@JoinColumn(name = "categoryid")
 	Category category;
 	
 	@JsonIgnore

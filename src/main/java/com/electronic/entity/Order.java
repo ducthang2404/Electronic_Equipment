@@ -28,7 +28,7 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer id;
 	@Temporal(TemporalType.DATE)
-	@Column(name = "orderDate")
+	@Column(name = "orderdate")
 	Date orderDate = new Date();
 	String status;
 	Double totalPrice;
@@ -38,10 +38,10 @@ public class Order {
 	List<OrderDetail> orderDetail;
 	
 	@ManyToOne
-	@JoinColumn(name = "custommerId")
+	@JoinColumn(name = "custommerid")
 	Custommer custommer;
 	
 	@ManyToOne
-	@JoinColumn(name = "staffId")
+	@JoinColumn(name = "staffid")
 	Staff staff;
 }
