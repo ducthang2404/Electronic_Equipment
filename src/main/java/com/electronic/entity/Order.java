@@ -1,6 +1,5 @@
 package com.electronic.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -22,21 +21,27 @@ import lombok.Data;
 
 @SuppressWarnings("serial")
 @Data
-@Entity 
+@Entity
 @Table(name = "Orders")
-public class Order  implements Serializable{
+public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long id;
-	String address;
+	Integer id;
 	@Temporal(TemporalType.DATE)
-	@Column(name = "Createdate")
-	Date createDate = new Date();
-	@ManyToOne
-	@JoinColumn(name = "Username")
-	Account account;
+	@Column(name = "orderDate")
+	Date orderDate = new Date();
+	String status;
+	Double totalPrice;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "order")
-	List<OrderDetail> orderDetails;
+	List<OrderDetail> orderDetail;
+	
+	@ManyToOne
+	@JoinColumn(name = "custommerId")
+	Custommer custommer;
+	
+	@ManyToOne
+	@JoinColumn(name = "staffId")
+	Staff staff;
 }

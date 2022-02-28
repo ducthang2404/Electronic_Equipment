@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -225,57 +225,8 @@
                                <h3> Danh Mục Sản Phẩm</h3>
                             </div>
                             <div class="category-menu-list">
-                                <ul>
-                                    <li><a href="#"><img alt="" src="/images/icons/thum7_1.jpg"> Tủ Lạnh</a></li>
-                                    <li><a href="#"><img alt="" src="/images/icons/thum8.png"> Tivi-Loa-Dàn Karaoke</a></li>
-                                    <li><a href="#"><img alt="" src="/images/icons/thum9_1.png">  Điện Thoại </a></li>
-                                    <li><a href="#"><img alt="" src="/images/icons/thum10_1.png"> LapTop</a></li>
-                                    <li><a href="#"><img alt="" src="/images/icons/thum11_1.png"> Đồ Gia Dụng</a></li>
-                                    <li><a href="#"><img alt="" src="/images/icons/thum12.png"> Nhãn Hàng Nổi Tiếng <i class="zmdi zmdi-chevron-right"></i></a>
-                                        <div class="category-menu-dropdown">
-                                            <div class="category-part-1 category-common mb--30">
-                                                <h4 class="categories-subtitle"> Toshiba</h4>
-                                                <ul>
-                                                    <li><a href="#"> Tủ Lạnh</a></li>
-                                                    <li><a href="#"> Máy giặt</a></li>
-                                                    <li><a href="#"> Máy Điều Hòa</a></li>
-                                                    <li><a href="#"> Máy Nước Nóng</a></li>
-                                                    <li><a href="#"> Máy Quạt </a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="category-part-2 category-common mb--30">
-                                                <h4 class="categories-subtitle"> SamSung</h4>
-                                                <ul>
-                                                    <li><a href="#"> Tủ Lạnh</a></li>
-                                                    <li><a href="#"> Máy giặt</a></li>
-                                                    <li><a href="#"> Máy Điều Hòa</a></li>
-                                                    <li><a href="#"> Máy Nước Nóng</a></li>
-                                                    <li><a href="#"> Máy Quạt </a></li>
-                                                    <li><a href="#"> Điện Thoại </a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="category-part-3 category-common">
-                                                <h4 class="categories-subtitle"> Apple</h4>
-                                                <ul>
-                                                    <li><a href="#"> Điện Thoại</a></li>
-                                                    <li><a href="#"> Tai Nghe</a></li>
-                                                    <li><a href="#"> Đông Hồ</a></li>
-                                                    <li><a href="#"> Máy Tính Bảng</a></li>
-                                                    <li><a href="#"> Laptop</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="category-part-4 category-common">
-                                                <h4 class="categories-subtitle"> Panasonic</h4>
-                                                <ul>
-                                                    <li><a href="#"> Tủ Lạnh</a></li>
-                                                    <li><a href="#"> Máy giặt</a></li>
-                                                    <li><a href="#"> Máy Điều Hòa</a></li>
-                                                    <li><a href="#"> Máy Nước Nóng</a></li>
-                                                    <li><a href="#"> Máy Quạt </a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
+                                <ul th:each=" categories : ${lstCategory}">
+                                    <li><a href="" th:text="${categories.name}"></a></li>
                                 </ul>
                             </div>
                         </div>
