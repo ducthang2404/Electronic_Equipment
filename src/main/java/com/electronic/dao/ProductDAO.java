@@ -10,4 +10,7 @@ import com.electronic.entity.Product;
 public interface ProductDAO extends JpaRepository<Product, Integer> {
 	@Query(value = "SELECT * FROM Products p WHERE providerId =?1 ",nativeQuery = true)
 	List<Product> findByCategoryId(Integer id);
+	
+	@Query(value = "SELECT * FROM Products WHERE name like %?1%", nativeQuery = true)
+	List<Product> findByName(String name);
 }

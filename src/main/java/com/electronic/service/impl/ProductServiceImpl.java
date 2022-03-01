@@ -20,4 +20,14 @@ public class ProductServiceImpl implements ProductService {
 		return productDAO.findByCategoryId(id);
 	}
 
+	@Override
+	public List<Product> findByName(String name) {
+		return productDAO.findByName(name);
+	}
+
+	@Override
+	public List<Product> findAll() {
+		return productDAO.findAll();
+	}
+
 }

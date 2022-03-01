@@ -7,4 +7,8 @@ import com.electronic.entity.Product;
 public interface ProductService {
 
 	List<Product> findByCategoryId(Integer id);
+	
+	List<Product> findByName(String name);
+	
+	List<Product> findAll();
 }

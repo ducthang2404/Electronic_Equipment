@@ -19,8 +19,13 @@ public class HomeController {
 	@Autowired
 	CategoryService categoryService;
 	
+	@Autowired
+	ProductService productService;
+	
 	@GetMapping("/")
 	public String index(Model model) {
+		List<Product> lstProduct = productService.findAll();
+		model.addAttribute("lstProduct", lstProduct);
 		
 		List<Category> list = categoryService.findAll();
 		model.addAttribute("lstCategory", list);
