@@ -11,10 +11,10 @@ import com.electronic.entity.Product;
 
 public interface ProductDAO extends JpaRepository<Product, Integer> {
 	@Query(value = "SELECT * FROM Products p WHERE providerId =?1 ",nativeQuery = true)
-	List<Product> findByCategoryId(Integer id);
+	Page<Product> findByCategoryId(Integer id,Pageable pageable);
 	
 	@Query(value = "SELECT * FROM Products WHERE name like %?1%", nativeQuery = true)
-	List<Product> findByName(String name);
+	Page<Product> findByName(String name,Pageable pageable);
 	
 	@Query(value = "SELECT * FROM Products", nativeQuery = true)
 	Page<Product> findAllByProduct(Pageable pageable);

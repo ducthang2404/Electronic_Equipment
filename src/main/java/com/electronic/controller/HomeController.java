@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.electronic.entity.Category;
 import com.electronic.entity.Product;
+import com.electronic.interceptor.GlobalInterceptor;
 import com.electronic.service.CategoryService;
 import com.electronic.service.ProductService;
 
@@ -28,8 +29,9 @@ public class HomeController {
 	ProductService productService;
 	private static final int SIZE = 6;
 	
+	//đổ data
 	@GetMapping("/")
-	public String index(Model model, HttpServletRequest request,
+	public String index(Model model,
 			 @RequestParam(name="page",defaultValue = "1") int page) {
 		Page<Product> lstProduct = productService.findAllByProduct(page-1, SIZE);
 		model.addAttribute("lstProduct", lstProduct.getContent());
@@ -39,6 +41,6 @@ public class HomeController {
 		List<Category> list = categoryService.findAll();
 		model.addAttribute("lstCategory", list);
 		
-		return "home/index";
+		return "redirect:/product/list/" +1;
 	}
 }

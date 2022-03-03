@@ -3,16 +3,17 @@ package com.electronic.service;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import com.electronic.entity.Product;
 
 public interface ProductService {
 
-	List<Product> findByCategoryId(Integer id);
+	Page<Product> findByCategoryId(Integer id,int page, int size);
 	
-	List<Product> findByName(String name);
+	Page<Product> findByName(String name,int page, int size);
 	
 	Page<Product> findAllByProduct(int page, int size);
+	
+	Product getById(Integer id);
 
 }

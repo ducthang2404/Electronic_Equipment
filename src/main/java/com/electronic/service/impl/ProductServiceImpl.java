@@ -19,18 +19,21 @@ public class ProductServiceImpl implements ProductService {
 	ProductDAO productDAO;
 
 	@Override
-	public List<Product> findByCategoryId(Integer id) {
-		return productDAO.findByCategoryId(id);
+	public Page<Product> findByCategoryId(Integer id, int page, int size) {
+		return productDAO.findByCategoryId(id, PageRequest.of(page, size));
 	}
 
 	@Override
-	public List<Product> findByName(String name) {
-		return productDAO.findByName(name);
+	public Page<Product> findByName(String name, int page, int size) {
+		return productDAO.findByName(name,PageRequest.of(page, size));
 	}
 
 	@Override
 	public Page<Product> findAllByProduct(int page, int size) {
 		return productDAO.findAllByProduct(PageRequest.of(page, size));
+	}
+	public Product getById(Integer id){
+		return productDAO.getById(id);
 	}
 
 }

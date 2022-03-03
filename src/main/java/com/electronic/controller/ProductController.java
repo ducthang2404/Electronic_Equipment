@@ -3,6 +3,7 @@ package com.electronic.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import com.electronic.entity.Product;
 import com.electronic.service.CategoryService;
 import com.electronic.service.ProductService;
 
+
 @Controller
 public class ProductController {
 	@Autowired
@@ -21,25 +23,48 @@ public class ProductController {
 	
 	@Autowired
 	CategoryService categoryService;
+	private static final int SIZE = 6;
 	
+	//search theo idcategory
 	@RequestMapping("product/list/{id}")
-	public String listProduct(Model model, @PathVariable("id") Integer id) {
-		List<Product> lstProduct = productService.findByCategoryId(id);
-		model.addAttribute("lstProduct", lstProduct);
+	public String listProduct(Model model, @PathVariable("id") Integer id,
+			@RequestParam(name = "page", defaultValue = "1") int page) {
+		
+		Page<Product> lstProduct = productService.findByCategoryId(id, page-1, SIZE);
+		model.addAttribute("lstProduct", lstProduct.getContent());
+		model.addAttribute("totalPage", lstProduct.getTotalPages());
+		model.addAttribute("currentPageLike", page);
 		
 		List<Category> list = categoryService.findAll();
 		model.addAttribute("lstCategory", list);
-		return "home/index";
+		return "product/list";
+	}
+
+	
+	//search 
+	@RequestMapping("/search")
+	public String search(Model model, @RequestParam("name") String name,
+			@RequestParam(name="page",defaultValue = "1") int page) {
+		
+		Page<Product> lstProduct = productService.findByName(name, page-1, SIZE);
+		model.addAttribute("lstProduct", lstProduct.getContent());
+		model.addAttribute("totalPage", lstProduct.getTotalPages());
+		model.addAttribute("currentPageLike", page);
+		
+		List<Category> list = categoryService.findAll();
+		model.addAttribute("lstCategory", list);
+		return "product/list";
 	}
 	
-	@RequestMapping("/search")
-	public String search(Model model, @RequestParam("name") String name) {
-		
-		List<Product> lstProduct = productService.findByName(name);
-		model.addAttribute("lstProduct", lstProduct);
-		
-		List<Category> list = categoryService.findAll();
-		model.addAttribute("lstCategory", list);
-		return "home/index";
+	//search theo id product
+	@RequestMapping("/product/detail/{id}")
+	public String productdetails(Model model, @PathVariable("id") Integer id) {
+		Product product = productService.getById(id);
+		System.out.println(product.getName());
+		System.out.println(product.getId());
+		System.out.println(product.getDescription());
+		model.addAttribute("product", product);
+		return "product/detail";
 	}
+
 }
