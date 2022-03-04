@@ -17,5 +17,9 @@ public interface ProductService {
 	Product getById(Integer id);
 	
 	List<Product> findByCategoryIds(Integer cid);
+	
+	public List<Product> listProduct();
+	
+	public void addProduct(Product product);
 
 }

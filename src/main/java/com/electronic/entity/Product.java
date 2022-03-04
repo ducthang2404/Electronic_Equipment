@@ -20,25 +20,90 @@ import lombok.NoArgsConstructor;
 @SuppressWarnings("serial")
 @Data
 @Entity
-@Table(name ="Products")
+@Table(name = "Products")
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer id;
-	String name;
-	String description;
-	String images;
-	Double price;
-	
+	private Integer id;
+	private String name;
+	private String description;
+	private String images;
+	private Double price;
+
 	@ManyToOne
 	@JoinColumn(name = "providerid")
-	Provider provider;
-	
+	private Provider provider;
+
 	@ManyToOne
 	@JoinColumn(name = "categoryid")
-	Category category;
-	
+	private Category category;
+
 	@JsonIgnore
 	@OneToMany(mappedBy = "product")
-	List<OrderDetail> orderDetail;
+	private List<OrderDetail> orderDetail;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getImages() {
+		return images;
+	}
+
+	public void setImages(String images) {
+		this.images = images;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public Provider getProvider() {
+		return provider;
+	}
+
+	public void setProvider(Provider provider) {
+		this.provider = provider;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public List<OrderDetail> getOrderDetail() {
+		return orderDetail;
+	}
+
+	public void setOrderDetail(List<OrderDetail> orderDetail) {
+		this.orderDetail = orderDetail;
+	}
+
 }

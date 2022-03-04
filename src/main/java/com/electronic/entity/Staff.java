@@ -29,6 +29,7 @@ public class Staff {
 	private String address;
 	private String images;
 	private Boolean gender;
+	private  boolean is_admin;
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "staff")
@@ -114,6 +115,14 @@ public class Staff {
 
 	public void setOrder(List<Order> order) {
 		this.order = order;
+	}
+
+	public boolean isIs_admin() {
+		return is_admin;
+	}
+
+	public void setIs_admin(boolean is_admin) {
+		this.is_admin = is_admin;
 	}
 
 }
