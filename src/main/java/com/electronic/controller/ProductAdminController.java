@@ -60,9 +60,9 @@ public class ProductAdminController {
 
 	@RequestMapping(value = "admin/addProduct", method = RequestMethod.POST)
 	public String addProduct(Model model, @ModelAttribute("product") Product product,
-			@RequestParam("images") MultipartFile images) {
-		storageService.saveone(images);
-		product.setImages(images.getOriginalFilename());
+			@RequestParam("file") MultipartFile file) {
+		storageService.saveone(file);
+		product.setImages(file.getOriginalFilename());
 		productService.addProduct(product);
 		return "redirect:/admin/product";
 	}
