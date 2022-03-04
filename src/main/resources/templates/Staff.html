@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{layouts/main-layout :: main-fragment(  
+                                                ~{::title},
+                                                ~{:: #user-static-resources},
+                                                ~{:: #user-header},
+                                                ~{:: #user-nav},
+                                                ~{:: #user-main-content},  
+                                                ~{:: #user-footer}
+                                               )}">
+
+<head>
+<title>Danh sách sản phẩm</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body class="cbp-spmenu-push">
+	<div class="main-content">
+		<nav>
+			<!--left-fixed -navigation-->
+			<div class=" sidebar" role="navigation" id="user-nav"
+				th:replace="~{/fragments/app-fragments :: nav-default}"></div>
+			<!--left-fixed -navigation-->
+
+
+			<!-- header-starts -->
+			<div id="user-header"
+				th:replace="~{/fragments/app-fragments :: header-default}"></div>
+			<!-- //header-ends -->
+		</nav>
+		<!-- main content start-->
+		<article id="user-main-content">
+			<div id="page-wrapper">
+				<div class="main-page">
+					<div class="panel panel-title">
+						<h3>
+							<span class="glyphicon glyphicon-star-empty "></span> Danh sách
+							nhân viên
+						</h3>
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="form-group">
+									<div class="autocomplete col-md-8 " id="suggestuser">
+									</div>
+									<div class="col-md-4">
+										<a style="float: right;"
+											class="btn btn-mini btn-primary btncreate"
+										th:href="@{/createuser}"> <i
+											class="glyphicon glyphicon-plus-sign"></i> Thêm tài khoản
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xm-12">
+							<div id="table">
+								<table class="table table-bordered" id="myTable">
+									<thead>
+										<tr>
+											<th>STT</th>
+											<th>Tên TK</th>
+											<th>Họ Tên</th>
+											<th>SĐT</th>
+											<th>Email</th>
+											<th>Trạng thái</th>
+											<th>Quyền</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="staff, state: ${listStaff}">
+											<td th:text="${state.count}"></td>
+											<td th:text="${staff.name}"></td>
+											<td th:text="${staff.username}"></td>
+											<td th:text="${staff.phone}"></td>
+											<td th:text="${staff.email}"></td>
+											<td th:text="${staff.address}"></td>
+											<td th:text="${staff.gender}"></td>
+
+											<td>
+												<div class="hidden-phone visible-desktop action-buttons">
+													<a class="btn btn-minier btn-success"
+														title="Chỉnh sửa thông tin sản phẩm"> <i
+														class="glyphicon glyphicon-edit"></i>
+													</a>
+													<!-- <a th:href="@{'/deluser/'+${staff.id}}" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-minier btn-danger" title="Xóa sản phẩm">
+														<i class="glyphicon glyphicon-trash"></i>
+													</a> -->
+												</div>
+											</td>
+
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+<!-- main content end-->
+
+	<!--footer-->
+	<div class="footer" id="user-footer"
+		th:replace="~{/fragments/app-fragments :: copyright}"></div>
+	<!--//footer-->
+</body>
+
+</html>
