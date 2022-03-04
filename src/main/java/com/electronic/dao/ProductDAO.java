@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import com.electronic.entity.Product;
 
 public interface ProductDAO extends JpaRepository<Product, Integer> {
-	@Query(value = "SELECT * FROM Products p WHERE providerId =?1 ",nativeQuery = true)
+	@Query(value = "SELECT * FROM Products p WHERE categoryId =?1 ",nativeQuery = true)
 	Page<Product> findByCategoryId(Integer id,Pageable pageable);
 	
 	@Query(value = "SELECT * FROM Products WHERE name like %?1%", nativeQuery = true)
@@ -18,4 +18,5 @@ public interface ProductDAO extends JpaRepository<Product, Integer> {
 	
 	@Query(value = "SELECT * FROM Products", nativeQuery = true)
 	Page<Product> findAllByProduct(Pageable pageable);
+	
 }

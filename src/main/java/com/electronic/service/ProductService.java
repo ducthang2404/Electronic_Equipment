@@ -15,5 +15,7 @@ public interface ProductService {
 	Page<Product> findAllByProduct(int page, int size);
 	
 	Product getById(Integer id);
+	
+	List<Product> findByCategoryIds(Integer cid);
 
 }

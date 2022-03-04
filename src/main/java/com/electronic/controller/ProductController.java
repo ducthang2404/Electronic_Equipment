@@ -58,12 +58,15 @@ public class ProductController {
 	
 	//search theo id product
 	@RequestMapping("/product/detail/{id}")
-	public String productdetails(Model model, @PathVariable("id") Integer id) {
+	public String productdetails(Model model, @PathVariable("id") Integer id,
+			@RequestParam(name = "page", defaultValue = "1") int page) {
 		Product product = productService.getById(id);
-		System.out.println(product.getName());
-		System.out.println(product.getId());
-		System.out.println(product.getDescription());
 		model.addAttribute("product", product);
+		
+		Page<Product> lstProduct =productService.findByCategoryId(product.getCategory().getId(),page-1, 8);
+		model.addAttribute("lstProduct",lstProduct);
+		model.addAttribute("totalPage", lstProduct.getTotalPages());
+		model.addAttribute("currentPageLike", page);
 		return "product/detail";
 	}
 

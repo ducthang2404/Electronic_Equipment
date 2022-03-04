@@ -1,125 +1,152 @@
 <!doctype html>
-<html class="no-js" lang="en" xmlns:th="http://wwww.thymeleaf.org" th:replace="~{/home/index :: dynamic(~{::body})}">
+<html class="no-js" lang="en" xmlns:th="http://wwww.thymeleaf.org"
+	th:replace="~{/home/index :: dynamic(~{::body})}">
+
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
 </head>
 
 <body>
-        <!-- Start Bradcaump area -->
-        <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(images/bg/2.jpg) no-repeat scroll center center / cover ;">
-            <div class="ht__bradcaump__wrap">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="bradcaump__inner text-center">
-                                <h2 class="bradcaump-title">Chi Tiết Sản Phẩm</h2>
-                                <nav class="bradcaump-inner">
-                                  <a class="breadcrumb-item" href="index.html">Trang Chủ</a>
-                                  <span class="brd-separetor">/</span>
-                                  <span class="breadcrumb-item active">Chi Tiết Sản Phẩm</span>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Bradcaump area -->
-        <!-- Start Product Details -->
-        <section class="htc__product__details pt--120 pb--100 bg__white">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-                        <div class="product__details__container">
-                            <!-- Start Small images -->
-                            <ul class="product__small__images" role="tablist">
-                                <li role="presentation" class="pot-small-img active">
-                                    <a href="#img-tab-1" role="tab" data-toggle="tab">
-                                        <img src="images/product-details/small-img/1.jpg" alt="small-image">
-                                    </a>
-                                </li>
-                                <li role="presentation" class="pot-small-img">
-                                    <a href="#img-tab-2" role="tab" data-toggle="tab">
-                                        <img src="images/product-details/small-img/2.jpg" alt="small-image">
-                                    </a>
-                                </li>
-                                <li role="presentation" class="pot-small-img hidden-xs">
-                                    <a href="#img-tab-3" role="tab" data-toggle="tab">
-                                        <img src="images/product-details/small-img/3.jpg" alt="small-image">
-                                    </a>
-                                </li>
-                                <li role="presentation" class="pot-small-img hidden-xs hidden-sm">
-                                    <a href="#img-tab-4" role="tab" data-toggle="tab">
-                                        <img src="images/product-details/small-img/2.jpg" alt="small-image">
-                                    </a>
-                                </li>
-                            </ul>
-                            <!-- End Small images -->
-                            <div class="product__big__images">
-                                <div class="portfolio-full-image tab-content">
-                                    <div role="tabpanel" class="tab-pane fade in active product-video-position" id="img-tab-1">
-                                        <img src="images/product-details/big-img/10.jpg" alt="full-image">
-                                        
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade product-video-position" id="img-tab-2">
-                                        <img src="images/product-details/big-img/12.jpg" alt="full-image">
-                                        
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade product-video-position" id="img-tab-3">
-                                        <img src="images/product-details/big-img/11.jpg" alt="full-image">
-    
-                                    </div>
-                                    <div role="tabpanel" class="tab-pane fade product-video-position" id="img-tab-4">
-                                        <img src="images/product-details/big-img/12.jpg" alt="full-image">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12 smt-30 xmt-30">
-                        <div class="htc__product__details__inner">
-                            <div class="pro__detl__title">
-                                <h2>Tên Sản Phẩm</h2>
-                            </div>
-                            <div class="pro__details">
-                                <p>MÔ TẢ SẢN PHẨM</p>
-                            </div>
-                            <ul class="pro__dtl__prize">
-                                <li class="old__prize">12.000.000</li>
-                                <li>10.000.000</li>
-                            </ul>
-                            <div class="product-action-wrap">
-                                <div class="prodict-statas"><span>Số Lượng :</span></div>
-                                <div class="product-quantity">
-                                    <form id='myform' method='POST' action='#'>
-                                        <div class="product-quantity">
-                                            <div class="cart-plus-minus">
-                                                <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1">
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <ul class="pro__dtl__btn">
-                                <li class="buy__now__btn"><a href="#">Mua Ngay</a></li>
-                                <li><a href="#"><span class="ti-heart"></span></a></li>
-                            </ul>
-                            <div class="pro__social__share">
-                                <h2>Chia Sẻ :</h2>
-                                <ul class="pro__soaial__link">
-                                    <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-google-plus"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Product Details -->
-    </div>
+	<!-- Start Bradcaump area -->
+	<div class="ht__bradcaump__area"
+		style="background: rgba(0, 0, 0, 0) url(images/bg/2.jpg) no-repeat scroll center center/cover;">
+		<div class="ht__bradcaump__wrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="bradcaump__inner text-center">
+							<h2 class="bradcaump-title">Chi Tiết Sản Phẩm</h2>
+							<nav class="bradcaump-inner">
+								<a class="breadcrumb-item" href="index.html">Trang Chủ</a> <span
+									class="brd-separetor">/</span> <span
+									class="breadcrumb-item active">Chi Tiết Sản Phẩm</span>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Bradcaump area -->
+	<!-- Start Product Details -->
+
+	<div class="single-portfolio-area bg__white ptb--100" style="width: 150px;">
+		<div class="container" >
+			<div class="row" th:each=" p : ${product}">
+				<div class="col-md-7">
+					<div class="single-portfolio-img">
+						<img th:src="@{|/images/products/${p.images}|}" alt="">
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="portfolio-description mrg-sm">
+						<h2 th:text="${p.name}">Tên sản phẩm</h2>
+						<p th:text="${p.description}"></p>
+						<ul class="pro__dtl__prize">
+							<li th:text="${p.price}">10.000.000</li>
+						</ul>
+						<div class="product-action-wrap">
+							<div class="prodict-statas">
+								<span>Số Lượng :</span>
+							</div>
+							<div class="product-quantity">
+								<form id='myform' method='POST' action='#'>
+									<div class="product-quantity">
+										<div class="cart-plus-minus">
+											<input class="cart-plus-minus-box" type="text"
+												name="qtybutton" value="1">
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<ul class="pro__dtl__btn">
+							<li class="buy__now__btn"><a href="#">Mua Ngay</a></li>
+							<li><a href="#"><span class="ti-heart"></span></a></li>
+						</ul>
+						<div class="portfolio-social">
+							<ul>
+								<li>Share:</li>
+								<li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+								<li><a href="#"><i class="zmdi zmdi-instagram"></i></a></li>
+								<li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+								<li><a href="#"><i class="zmdi zmdi-google"></i></a></li>
+								<li><a href="#"><i class="zmdi zmdi-dribbble"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tab-content another-product-style jump">
+							<div class="tab-pane active">
+								<div class="row">
+									<div th:each=" product : ${lstProduct}">
+										<div
+											class="col-md-3 single__pro col-lg-3 cat--1 col-sm-3 col-xs-12">
+											<div class="product">
+												<div class="product__inner">
+													<div class="pro__thumb">
+														<a href=""> <img
+															th:src="@{|/images/products/${product.images}|}" alt="">
+														</a>
+													</div>
+													<div class="product__hover__info">
+														<ul class="product__action">
+															<li><a title="Thông tin"
+																class="quick-view modal-view detail-link" th:href="@{|/product/detail/${product.id}|}"><span
+																	class="ti-plus"></span>
+																</a>
+															</li>
+															<li><a title="Thêm" href="cart.html"><span
+																	class="ti-shopping-cart"></span>
+																</a>
+															</li>
+															<li><a title="Yêu Thích" href="wishlist.html"><span
+																	class="ti-heart"></span>
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+												<div class="product__details">
+													<h2>
+														<a href="/product-details.html" th:text="${product.name}"></a>
+													</h2>
+													<ul class="product__price">
+														<li class="new__price" th:text="${product.price}"></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<nav aria-label="Page navigation example" th:if="${totalPage >1}" style="text-align: center;">
+							<ul class="pagination justify-content-center">
+								<li th:class="${currentPageLike == 1} ? 'page-item disabled' : 'page-item'">
+									<a th:href="@{${currentPageLike > 1} ? ${'?page=' + (currentPageLike-1)} :''}"
+										class="page-link" aria-label="Previous">
+										<span aria-hidden="true">&laquo;</span>
+										<span class="sr-only">Previous</span>
+									</a>
+								</li>
+								<li th:each="i : ${#numbers.sequence(1,totalPage)}" th:class="${currentPageLike == i} ? 'page-item active' : 'page-item'">
+									<a class="page-link" th:href="@{'?page='+ ${i} }" th:text="${i}"></a>
+								</li>
+								<li
+									th:class="${currentPageLike == totalPage} ? 'page-item disabled' : 'page-item'">
+									<a th:href="@{${currentPageLike < totalPage} ? ${'?page=' + (currentPageLike+1)} : '' }"
+										class="page-link" href="#" aria-label="Next">
+										<span aria-hidden="true">&raquo;</span>
+										<span class="sr-only">Next</span>
+									</a>
+								</li>
+							</ul>
+						</nav>
+		</div>		
+	</div>
+	</div>
 </body>
 
 </html>
