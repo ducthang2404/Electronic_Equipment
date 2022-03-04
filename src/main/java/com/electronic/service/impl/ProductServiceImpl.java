@@ -32,14 +32,8 @@ public class ProductServiceImpl implements ProductService {
 	public Page<Product> findAllByProduct(int page, int size) {
 		return productDAO.findAllByProduct(PageRequest.of(page, size));
 	}
-	public Product getById(Integer id){
+	public Product findById(Integer id){
 		return productDAO.getById(id);
-	}
-
-	@Override
-	public List<Product> findByCategoryIds(Integer cid) {
-		
-		return productDAO.findByCategoryIds(cid);
 	}
 
 }

@@ -1,7 +1,9 @@
 package com.electronic.entity;
 
+import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -29,6 +33,9 @@ public class Product {
 	String description;
 	String images;
 	Double price;
+	@Temporal(TemporalType.DATE)
+	@Column(name = "Createdate")
+	Date createDate = new Date();
 	
 	@ManyToOne
 	@JoinColumn(name = "providerid")

@@ -30,17 +30,18 @@
     <link rel="stylesheet" href="/css/custom.css">
     <!-- Modernizr JS -->
     <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
 
-<body>
+<body  ng-app="shopping-cart-app" ng-controller="shopping-cart-ctrl">
     <div class="wrapper fixed__footer">
 	    <div th:replace="home/_header.html"></div>
 	    <div th:replace="${body}"></div>
-	    <div th:replace="home/_footer.html"></div>  
-      	<div  th:replace="cart/cart.html"></div>
-              
-        
-    </div>
+	    <div th:replace="home/_footer.html"></div>
+	    
+	    
+	</div>
     
     <!-- jquery latest version -->
     <script src="/js/vendor/jquery-1.12.0.min.js"></script>
@@ -54,6 +55,7 @@
     <script src="/js/waypoints.min.js"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="/js/main.js"></script>
+    <script src="/js/cart/shopping-cart-app.js"></script>
 
 </body>
 

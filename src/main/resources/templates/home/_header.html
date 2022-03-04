@@ -15,33 +15,19 @@
                     <nav class="mainmenu__nav hidden-xs hidden-sm">
                         <ul class="main__menu">
                             <li class="drop"><a href="index.html">Trang Chủ</a></li>
-                            <li class="drop"><a href="#">Giỏ Hàng</a></li>
-                            <li class="drop"><a href="#">Thanh Toán</a></li>
+                            <li class="drop"><a href="#">Giới thiệu</a></li>
+                            <li class="drop"><a href="#">Sản Phẩm</a></li>
                             <li class="drop"><a href="#">Tài Khoản</a>
                                 <ul class="dropdown">
-                                    <li><a href="#">Đăng Nhập & Đăng Ký</a></li>
-                                    <li><a href="#">Đăng Xuất</a></li>
+                                    <li><a href="#">Đăng nhập</a></li>
+                                    <li><a href="#">Đăng kí</a></li>
+                                    <li><a href="#">Đăng xuất</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Thông Tin</a></li>
+                            <li><a href="#">Adminstrator</a></li>
                         </ul>
                     </nav>
-                    <div class="mobile-menu clearfix visible-xs visible-sm">
-                        <nav id="mobile_dropdown">
-                            <ul class="main__menu">
-                                <li class="drop"><a href="index.html">Trang Chủ</a></li>
-                                <li class="drop"><a href="#">Giỏ Hàng</a></li>
-                                <li class="drop"><a href="#">Thanh Toán</a></li>
-                                <li class="drop"><a href="#">Tài Khoản</a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">Đăng Nhập & Đăng Ký</a></li>
-                                        <li><a href="#">Đăng Xuất</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Thông Tin</a></li>
-                            </ul>
-                        </nav>
-                    </div>                          
+                                             
                 </div>
                 <!-- End MAinmenu Ares -->
                 <div class="col-md-2 col-sm-4 col-xs-3">  
@@ -58,3 +44,24 @@
     </div>
     <!-- End Mainmenu Area -->
 </header>
+
+<div class="offset__wrapper">
+    <!-- Start Search Popap -->
+    <div class="search__area">
+        <div class="container" >
+            <div class="row" >
+                <div class="col-md-12" >
+                    <div class="search__inner">
+                        <form action="/search" method="post">
+                            <input placeholder="Search here... " type="text" name="name">
+                            <button type="submit"></button>
+                        </form>
+                        <div class="search__close__btn">
+                            <span class="search__close__btn_icon"><i class="zmdi zmdi-close"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

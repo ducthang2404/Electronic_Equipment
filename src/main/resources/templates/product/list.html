@@ -53,7 +53,7 @@
 																	class="ti-plus"></span>
 																</a>
 															</li>
-															<li><a title="Thêm" href="cart.html"><span
+															<li><a title="Thêm" th:attr="ng-click=@{|cart.add(${product.id})|}"><span
 																	class="ti-shopping-cart"></span>
 																</a>
 															</li>
@@ -81,19 +81,19 @@
 						<nav aria-label="Page navigation example" th:if="${totalPage >1}" style="text-align: center;">
 							<ul class="pagination justify-content-center">
 								<li th:class="${currentPageLike == 1} ? 'page-item disabled' : 'page-item'">
-									<a th:href="@{${currentPageLike > 1} ? ${'?page=' + (currentPageLike-1)} :''}"
+									<a th:href="@{|?name=${keyword}&page=${currentPageLike - 1}|}"
 										class="page-link" aria-label="Previous">
 										<span aria-hidden="true">&laquo;</span>
 										<span class="sr-only">Previous</span>
 									</a>
 								</li>
 								<li th:each="i : ${#numbers.sequence(1,totalPage)}" th:class="${currentPageLike == i} ? 'page-item active' : 'page-item'">
-									<a class="page-link" th:href="@{'?page='+ ${i} }" th:text="${i}"></a>
+									<a class="page-link" th:href="@{|?name=${keyword}&page=${i}|}" th:text="${i}"></a>
 								</li>
 								<li
 									th:class="${currentPageLike == totalPage} ? 'page-item disabled' : 'page-item'">
-									<a th:href="@{${currentPageLike < totalPage} ? ${'?page=' + (currentPageLike+1)} : '' }"
-										class="page-link" href="#" aria-label="Next">
+									<a th:href="@{|?name=${keyword}&page=${currentPageLike + 1}|}"
+										class="page-link" aria-label="Next">
 										<span aria-hidden="true">&raquo;</span>
 										<span class="sr-only">Next</span>
 									</a>

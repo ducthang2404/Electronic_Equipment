@@ -46,10 +46,11 @@ public class ProductController {
 	public String search(Model model, @RequestParam("name") String name,
 			@RequestParam(name="page",defaultValue = "1") int page) {
 		
-		Page<Product> lstProduct = productService.findByName(name, page-1, SIZE);
+		Page<Product> lstProduct = productService.findByName(name, page-1, 2);
 		model.addAttribute("lstProduct", lstProduct.getContent());
 		model.addAttribute("totalPage", lstProduct.getTotalPages());
 		model.addAttribute("currentPageLike", page);
+		model.addAttribute("keyword", name);
 		
 		List<Category> list = categoryService.findAll();
 		model.addAttribute("lstCategory", list);
@@ -60,7 +61,7 @@ public class ProductController {
 	@RequestMapping("/product/detail/{id}")
 	public String productdetails(Model model, @PathVariable("id") Integer id,
 			@RequestParam(name = "page", defaultValue = "1") int page) {
-		Product product = productService.getById(id);
+		Product product = productService.findById(id);
 		model.addAttribute("product", product);
 		
 		Page<Product> lstProduct =productService.findByCategoryId(product.getCategory().getId(),page-1, 8);
