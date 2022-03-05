@@ -118,14 +118,6 @@ public class Staff {
 		this.order = order;
 	}
 
-	public boolean isIs_admin() {
-		return is_admin;
-	}
-
-	public void setIs_admin(boolean is_admin) {
-		this.is_admin = is_admin;
-	}
-
 	public String getRolename() {
 		return rolename;
 	}
