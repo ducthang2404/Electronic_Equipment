@@ -34,7 +34,7 @@
 									class="nav-badge-btm"></span></a></li>
 							<li><a href="ProductOutbound.html">Xuất kho</a></li>
 						</ul> <!-- //nav-second-level --></li>
-					<li><a th:href="@{/user}"><i class="fa fa-table nav_icon"></i>Nhân
+					<li><a th:href="@{/admin/staff}"><i class="fa fa-table nav_icon"></i>Nhân
 							sự</a></li>
 					<li><a href="Revenue.html"><i class="fa fa-table nav_icon"></i>Thống
 							kê doanh thu</a></li>
@@ -90,7 +90,7 @@
 							aria-expanded="false">
 
 								<div class="user-name">
-									<p>Tên nhân viên</p>
+									<p th:utext="${#request.userPrincipal.name}"></p>
 									<span style="color: orange;">Quyền nhân viên</span>
 								</div> <i class="fa fa-angle-down lnr"></i> <i
 								class="fa fa-angle-up lnr"></i>
@@ -101,7 +101,7 @@
 								<li><a href="#"><i class="fa fa-cog"></i> Cài đặt</a></li>
 								<li><a href="#"><i class="fa fa-user"></i> Thông tin
 										tài khoản</a></li>
-								<li><a href="#"><i class="fa fa-sign-out"></i> Đăng
+								<li><a th:href="@{/logout}"><i class="fa fa-sign-out"></i> Đăng
 										xuất</a></li>
 							</ul></li>
 					</ul>

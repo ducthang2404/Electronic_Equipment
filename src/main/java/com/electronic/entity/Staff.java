@@ -29,7 +29,8 @@ public class Staff {
 	private String address;
 	private String images;
 	private Boolean gender;
-	private  boolean is_admin;
+	
+	private String rolename;
 
 	@JsonIgnore
 	@OneToMany(mappedBy = "staff")
@@ -123,6 +124,14 @@ public class Staff {
 
 	public void setIs_admin(boolean is_admin) {
 		this.is_admin = is_admin;
+	}
+
+	public String getRolename() {
+		return rolename;
+	}
+
+	public void setRolename(String rolename) {
+		this.rolename = rolename;
 	}
 
 }
