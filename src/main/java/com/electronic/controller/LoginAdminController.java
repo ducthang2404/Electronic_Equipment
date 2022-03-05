@@ -21,7 +21,7 @@ public class LoginAdminController {
 		return "loginPage";
 	}
 
-	@RequestMapping(value = "/admin/index", method = RequestMethod.GET)
+	@RequestMapping(value = "/user/index", method = RequestMethod.GET)
 	public String index(Model model, Principal principal, HttpSession session) {
 		//session.setAttribute(name, value);
 		return "index";

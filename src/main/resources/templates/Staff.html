@@ -67,7 +67,8 @@
 											<th>Họ Tên</th>
 											<th>SĐT</th>
 											<th>Email</th>
-											<th>Trạng thái</th>
+											<th>Địa chỉ</th>
+											<th>Giới tính</th>
 											<th>Quyền</th>
 											<th></th>
 										</tr>
@@ -75,12 +76,13 @@
 									<tbody>
 										<tr th:each="staff, state: ${listStaff}">
 											<td th:text="${state.count}"></td>
-											<td th:text="${staff.name}"></td>
 											<td th:text="${staff.username}"></td>
+											<td th:text="${staff.name}"></td>
 											<td th:text="${staff.phone}"></td>
 											<td th:text="${staff.email}"></td>
 											<td th:text="${staff.address}"></td>
 											<td th:text="${staff.gender}"></td>
+											<td th:text="${staff.rolename}"></td>
 
 											<td>
 												<div class="hidden-phone visible-desktop action-buttons">
