@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{layouts/main-layout :: main-fragment(  
+                                                ~{::title},
+                                                ~{:: #user-static-resources},
+                                                ~{:: #user-header},
+                                                ~{:: #user-nav},
+                                                ~{:: #create-user-main-content},  
+                                                ~{:: #user-footer}
+                                               )}">
+
+<head>
+<title>Danh sách sản phẩm</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body class="cbp-spmenu-push">
+	<div class="main-content">
+		<nav>
+			<!--left-fixed -navigation-->
+			<div class=" sidebar" role="navigation" id="user-nav"
+				th:replace="~{/fragments/app-fragments :: nav-default}"></div>
+			<!--left-fixed -navigation-->
+
+
+			<!-- header-starts -->
+			<div id="user-header"
+				th:replace="~{/fragments/app-fragments :: header-default}"></div>
+			<!-- //header-ends -->
+		</nav>
+		<!-- main content start-->
+		<article id="create-user-main-content">
+			<div id="page-wrapper">
+				<div class="panel panel-default">
+					<div class="panel-title">
+						<h3>
+							<span class="glyphicon glyphicon-star-empty "></span> Thêm nhân
+							viên mới
+
+
+						</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row col-md-6 col-sm-12">
+							<form method="POST" th:action="@{/admin/addStaff}"
+								th:object="${staff}">
+								<div class="form-group">
+								
+									<input th:field="*{id}" style="display: none" type="text" class="form-control">
+									<label for="lblmaSP" class="col-sm-4">Tên tài khoản</label> <input
+										th:field="*{username}" type="text" class="form-control">
+								</div>
+								<div class="form-group">
+									<label for="lblmaSP" class="col-sm-4">Mật khẩu</label> <input
+										th:field="*{password}" type="password" class="form-control">
+								</div>
+								<div class="form-group">
+									<label for="lblmaSP" class="col-sm-4">Họ tên</label> <input
+										th:field="*{name}" type="text" class="form-control">
+								</div>
+								<div class="form-group">
+									<label for="lblmaSP" class="col-sm-4">Số ĐT</label> <input
+										th:field="*{phone}" type="text" class="form-control">
+								</div>
+								<div class="form-group">
+									<label for="lblmaSP" class="col-sm-4">Email</label> <input
+										th:field="*{email}" type="text" class="form-control">
+								</div>
+								<div class="form-group">
+									<label for="lblmaSP" class="col-sm-4">Địa chỉ</label> <input
+										th:field="*{address}" type="text" class="form-control">
+								</div>
+								<div class="form-group">
+									<label for="lblmaSP" class="col-sm-4">Ảnh</label> <input
+										th:field="*{images}" type="text" class="form-control">
+								</div>
+								<div class="form-group">
+									<label for="lblmaSP" class="col-sm-4">Giới tính</label> <input
+										th:field="*{gender}" type="text" class="form-control">
+								</div>
+								
+								<div class="form-group">
+									<label for="lblmaSP" class="col-sm-4">Quyền</label> <select
+										class="form-control" id="productType" th:field="*{rolename}">
+										<option th:value="ROLE_ADMIN">admin</option>
+										<option th:value="ROLE_USER">user</option>
+									</select>
+								</div>
+								<input type="submit" value="Create" />
+							</form>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</article>
+	</div>
+	<!-- main content end-->
+
+	<!--footer-->
+	<div class="footer" id="user-footer"
+		th:replace="~{/fragments/app-fragments :: copyright}"></div>
+	<!--//footer-->
+</body>
+
+</html>

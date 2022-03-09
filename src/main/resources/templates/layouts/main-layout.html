@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:fragment="main-fragment (title, otherStaticResources, header, nav, mainContent, footer)">
+<head>
+<title th:replace="${title}">Trang chủ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Bootstrap Core CSS -->
+<link href="/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- Custom CSS -->
+<link href="/css/styleadmin.css" rel='stylesheet' type='text/css' />
+<!-- font CSS -->
+<!-- font-awesome icons -->
+<link href="/css/font-awesome.css" rel="stylesheet">
+<!-- //font-awesome icons -->
+<!-- js-->
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="/js/modernizr.custom.js"></script>
+<!--animate-->
+<link href="/css/animate.css" rel="stylesheet" type="text/css"
+	media="all">
+<script src="/js/wow.min.js"></script>
+<script>
+	new WOW().init();
+</script>
+<!--//end-animate-->
+<!-- Metis Menu -->
+<script src="/js/metisMenu.min.js"></script>
+<script src="/js/custom.js"></script>
+<link href="/css/customadmin.css" rel="stylesheet">
+<!--//Metis Menu -->
+<!-- Classie -->
+<script src="/js/classie.js"></script>
+
+<!--scrolling js-->
+<script src="/js/jquery.nicescroll.js"></script>
+<script src="/js/scripts.js"></script>
+<!--//scrolling js-->
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.js">
+</script>
+<!--datatable-->
+<link
+	href="http://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"
+	rel="stylesheet">
+<script
+	src="http://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<!--datatable-->
+<style>
+h2 {
+	text-align: center;
+}
+/* Định dạng cho bảng dữ liệu*/
+table {
+	margin: auto;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 90%;
+	border: 1px solid #ddd;
+}
+/* Định dạng cho các cột*/
+th, td {
+	border: none;
+	text-align: left;
+	padding: 8px;
+	vertical-align: middle !important;
+}
+/* Tạo thanh sroll ngang nếu chiều dài nội dung quá lớn*/
+#table {
+	overflow-x: auto;
+}
+/* Thiết lập màu nền cho các ô*/
+tr:nth-child(even) {
+	background-color: #f2f2f2
+}
+
+@media screen and (max-width: 1100px) {
+	.profile_details-left {
+		display: none;
+	}
+}
+</style>
+<th:block th:replace="${otherStaticResources} ?: ~{}"></th:block>
+</head>
+<body class="cbp-spmenu-push">
+	<div class="main-content">
+		<section>
+			<nav>
+				<!--left-fixed -navigation-->
+				<div th:insert="${nav} ?: ~{}" class=" sidebar" role="navigation">
+
+				</div>
+				<!--left-fixed -navigation-->
+
+				<!-- header-starts -->
+				<div th:insert="${header} ?: ~{}"></div>
+				<!-- //header-ends -->
+			</nav>
+
+			<!-- main content start-->
+			<article th:insert="${mainContent} ?: ~{}"></article>
+			<!-- main content end-->
+		</section>
+		<!--footer-->
+		<div th:insert="${footer} ?: ~{}" class="footer"></div>
+		<!--//footer-->
+	</div>
+</body>
+<!-- Script thu và mở menu trái -->
+<script src="/js/menuleft.js"></script>
+</html>

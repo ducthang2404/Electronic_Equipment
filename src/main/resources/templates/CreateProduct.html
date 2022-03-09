@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{layouts/main-layout :: main-fragment(  
+                                                ~{::title},
+                                                ~{:: #create-product-static-resources},
+                                                ~{:: #create-product-header},
+                                                ~{:: #create-product-nav},
+                                                ~{:: #create-product-main-content},  
+                                                ~{:: #create-product-footer}
+                                               )}">
+
+<head>
+<title>Danh sách sản phẩm</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+
+<body class="cbp-spmenu-push">
+	<div class="main-content">
+		<nav>
+			<!--left-fixed -navigation-->
+			<div class=" sidebar" role="navigation" id="create-product-nav"
+				th:replace="~{/fragments/app-fragments :: nav-default}"></div>
+			<!--left-fixed -navigation-->
+
+
+			<!-- header-starts -->
+			<div id="create-product-header"
+				th:replace="~{/fragments/app-fragments :: header-default}"></div>
+			<!-- //header-ends -->
+		</nav>
+		<!-- main content start-->
+		<article id="create-product-main-content">
+			<div id="page-wrapper">
+				<div class="panel panel-default">
+					<div class="panel-title">
+						<h3>
+							<span class="glyphicon glyphicon-star-empty "></span> Thêm sản
+							phẩm mới
+						</h3>
+					</div>
+					<div class="panel-body">
+						<div class="row col-md-12">
+							<form th:action="@{/admin/addProduct}" th:object="${product}"
+								method="POST" enctype="multipart/form-data">
+
+								<div class="form-group col-md-6">
+									<input th:field="*{id}" style="display: none"
+										class="form-control col-sm-7" />
+										
+										<label for="lblmaSP"
+										class="col-sm-4">Tên sản phẩm</label> 
+										
+										<input
+										th:field="*{name}" type="text" class="form-control"
+										id="txtproductCode">
+								</div>
+
+
+								<div class="form-group col-md-6">
+									<label for="lblgia" class="col-sm-4">Giá bán</label> 
+									<input
+										type="number" class="form-control" id="txtproductPrice"
+										th:field="*{price}">
+								</div>
+
+								<div class="form-group col-md-6">
+									<label for="lblthongTinSP" class="col-sm-4"> Thông tin
+									</label> <input type="text" class="form-control" th:field="*{description}"
+										id="txtproductInfomation">
+								</div>
+								
+								
+								<div class="form-group col-md-6">
+									<label for="lbloaiSP" class="col-sm-4">Loại sản phẩm</label> <select
+										class="form-control" id="productType" th:field="*{category}">
+										<option value="">Chọn</option>
+										<option th:each="category: ${listCategories}"
+											th:value="${category.id}"
+											th:utext="${category.name}">Laptop</option>
+									</select>
+
+								</div>
+				
+
+								<div class="form-group col-md-6">
+									<label for="lbloaiSP" class="col-sm-4">Nhà cung cấp</label> <select
+										class="form-control" id="productType"
+										th:field="*{provider}">
+										<option value="">Chọn</option>
+										<option th:each="provider: ${listProviders}"
+											th:value="${provider.id}"
+											th:utext="${provider.name}">Laptop</option>
+									</select>
+								</div>
+								
+								
+								
+								<div class="form-group col-md-6">
+									<label for="lbltenSP" class="col-sm-4">Chọn ảnh</label> <input
+										type="file" class="form-control" value="ngày" name="file"
+										th:name="file">
+								</div>
+								
+								
+								<div class="btn btn-mini btn-primary btncreate">
+									<input type="submit" class="form-control">
+								</div>
+
+
+							</form>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</article>
+	</div>
+	<!-- main content end-->
+
+	<!--footer-->
+	<div class="footer" id="create-product-footer"
+		th:replace="~{/fragments/app-fragments :: copyright}"></div>
+	<!--//footer-->
+</body>
+
+</html>

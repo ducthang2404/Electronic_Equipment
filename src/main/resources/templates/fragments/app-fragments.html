@@ -1,0 +1,121 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>App Fragments</title>
+</head>
+<body>
+	<!--left-fixed -navigation-->
+		<div th:fragment="nav-default" class="navbar-collapse">
+			<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left"
+				id="cbp-spmenu-s1">
+				<ul class="nav" id="side-menu">
+					<li><a href="index.html" class="active"><i
+							class="fa fa-home nav_icon"></i>Trang chủ</a></li>
+
+					<li><a href="#"><i class="fa fa-cogs nav_icon"></i>Sản
+							phẩm<span class="fa arrow"></span></a>
+						<ul class="nav nav-second-level collapse">
+							<li><a th:href="@{/admin/createProduct}">Thêm sản phẩm mới</a></li>
+							<li><a th:href="@{/admin/product}">Danh sách sản phẩm</a></li>
+							<li><a th:href="@{/category}">Loại sản phẩm</a></li>
+						</ul> <!-- /nav-second-level --></li>
+					<li class=""><a href="#"><i class="fa fa-book nav_icon"></i>Đơn
+							hàng <span class="fa arrow"></span></a>
+						<ul class="nav nav-second-level collapse">
+							<li><a th:href="@{/createOrder}">Tạo đơn hàng</a></li>
+							<li><a href="orders">Danh sách đơn hàng</a></li>
+						</ul> <!-- /nav-second-level --></li>
+					<li><a th:href="@{/customers}"><i
+							class="fa fa-th-large nav_icon"></i>Khách hàng</span></a></li>
+					<li><a href="#"><i class="fa fa-envelope nav_icon"></i>Quản
+							lý kho<span class="fa arrow"></span></a>
+						<ul class="nav nav-second-level collapse">
+							<li><a href="ProductInbound.html">Nhập kho <span
+									class="nav-badge-btm"></span></a></li>
+							<li><a href="ProductOutbound.html">Xuất kho</a></li>
+						</ul> <!-- //nav-second-level --></li>
+					<li><a th:href="@{/admin/staff}"><i class="fa fa-table nav_icon"></i>Nhân
+							sự</a></li>
+					<li><a href="Revenue.html"><i class="fa fa-table nav_icon"></i>Thống
+							kê doanh thu</a></li>
+				</ul>
+				<!-- //sidebar-collapse -->
+			</nav>
+
+		</div>
+	<!--left-fixed -navigation-->
+
+
+
+
+
+
+	<!-- Default Header -->
+		<div th:fragment="header-default" class="sticky-header header-section">
+			<div class="header-left">
+
+				<!--nút thu mở menu-->
+				<button id="showLeftPush">
+					<i class="fa fa-bars"></i>
+				</button>
+
+				<!--logo -->
+				<div class="logo">
+					<a href="index.html">
+						<h4>Nhóm đồ án</h4> <span>Trang quản trị</span>
+					</a>
+				</div>
+				<!--//logo-->
+
+			</div>
+			<div class="header-center">
+				<div class="profile_details-left " style="float: left;">
+					<ul>
+						<li class="profile_details_drop ">
+
+							<div class="user-name">
+								<a style="color: white;" href="">Hướng dẫn sử dụng</a> <a
+									style="color: white;" href="">hotline: <span
+									style="color: orange;"> 0582224599 </span></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!--notification menu end -->
+				<div class="profile_details">
+
+					<ul>
+						<li class="dropdown profile_details_drop "><a href="#"
+							class="dropdown-toggle " data-toggle="dropdown"
+							aria-expanded="false">
+
+								<div class="user-name">
+									<p th:utext="${#request.userPrincipal.name}"></p>
+									<span style="color: orange;">Quyền nhân viên</span>
+								</div> <i class="fa fa-angle-down lnr"></i> <i
+								class="fa fa-angle-up lnr"></i>
+								<div class="clearfix"></div>
+
+						</a>
+							<ul class="dropdown-menu drp-mnu">
+								<li><a href="#"><i class="fa fa-cog"></i> Cài đặt</a></li>
+								<li><a href="#"><i class="fa fa-user"></i> Thông tin
+										tài khoản</a></li>
+								<li><a th:href="@{/logout}"><i class="fa fa-sign-out"></i> Đăng
+										xuất</a></li>
+							</ul></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+		<!-- Default footer -->
+		<p th:fragment="copyright">
+			&copy; 2020 Novus Admin Panel. All Rights Reserved | Design by <a
+				href="https://www.facebook.com/thienpham20042000" target="_blank">Team
+				đồ án</a>
+		</p>
+</body>
+</html>

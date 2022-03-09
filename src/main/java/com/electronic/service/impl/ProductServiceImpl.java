@@ -16,7 +16,7 @@ import com.electronic.service.ProductService;
 public class ProductServiceImpl implements ProductService {
 	
 	@Autowired
-	ProductDAO productDAO;
+	private ProductDAO productDAO;
 
 	@Override
 	public Page<Product> findByCategoryId(Integer id, int page, int size) {
@@ -36,4 +36,26 @@ public class ProductServiceImpl implements ProductService {
 		return productDAO.getById(id);
 	}
 
+<<<<<<< HEAD
+=======
+	@Override
+	public List<Product> findByCategoryIds(Integer cid) {
+		
+		return productDAO.findByCategoryIds(cid);
+	}
+
+	@Override
+	public List<Product> listProduct() {
+		return productDAO.findAll();
+	}
+
+	@Override
+	public void addProduct(Product product) {
+		productDAO.save(product);
+		
+	}
+	
+	
+
+>>>>>>> e23d1fcd62227c19f8664e48dbb7f4056c7d50e7
 }

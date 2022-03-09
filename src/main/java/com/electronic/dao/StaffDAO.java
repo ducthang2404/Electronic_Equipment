@@ -6,4 +6,5 @@ import com.electronic.entity.Staff;
 
 public interface StaffDAO extends JpaRepository<Staff, Integer> {
 
+	public Staff findByUsername(String userName);
 }
