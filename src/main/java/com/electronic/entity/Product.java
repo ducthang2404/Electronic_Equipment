@@ -32,9 +32,11 @@ public class Product {
 	String name;
 	String description;
 	String images;
-	Double price;
+	double price;
+	int quantily = 1;
+	double discount;
 	@Temporal(TemporalType.DATE)
-	@Column(name = "Createdate")
+	@Column(name = "createdate")
 	Date createDate = new Date();
 	
 	@ManyToOne

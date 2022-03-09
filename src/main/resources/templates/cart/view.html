@@ -7,8 +7,7 @@
 
 <body>
     <div class="wrapper fixed__footer">       
-        <!-- Start Bradcaump area -->
-        <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(images/bg/2.jpg) no-repeat scroll center center / cover ;">
+        <div class="ht__bradcaump__area" style="background:white url(@{|/images/bg/2.jpg|}) no-repeat scroll center center / cover ;">
             <div class="ht__bradcaump__wrap">
                 <div class="container">
                     <div class="row">
@@ -40,35 +39,33 @@
                                             <th class="product-thumbnail">Ảnh</th>
                                             <th class="product-name">Sản Phẩm</th>
                                             <th class="product-price">Giá</th>
+                                            <th class="product-discount">Giảm giá</th>
                                             <th class="product-quantity">Số Lượng</th>
                                             <th class="product-subtotal">Tổng Cộng</th>
                                             <th class="product-remove">Xóa</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                   	<th:block th:each="p : ${cart.items}">
                                         <tr>
-                                            <td class="product-thumbnail"><a href="#"><img src="images/product/4.png" alt="product img" /></a></td>
-                                            <td class="product-name"><a href="#">Tên Sản Phẩm</a></td>
-                                            <td class="product-price"><span class="amount">3.000.000</span></td>
-                                            <td class="product-quantity"><input type="number" value="1" /></td>
-                                            <td class="product-subtotal">3.000.000</td>
-                                            <td class="product-remove"><a href="#">X</a></td>
+                                            <td class="product-thumbnail"><a href="#"><img th:src="@{|/images/products/${p.images}|}" alt="product img" /></a></td>
+                                            <td class="product-name"><a th:text="${p.name}">Tên Sản Phẩm</a></td>
+                                            <td class="product-price"><span th:text="${p.price}" class="amount">3.000.000</span></td>
+                                            <td class="product-discount" th:text="${p.discount}">3.000.000</td>
+                                            <td class="product-quantity">
+                                            	<input th:attr="id=${p.id}, data-price=${p.price}, data-disc=${p.discount}" th:value="${p.quantily}" class="cart-update" type="number" min="1" />
+                                            </td>
+                                            <td class="amount" th:text="${p.quantily * p.price - (p.discount)}">3.000.000</td>
+                                            <td class="product-remove"><a href="#" th:id="${p.id}" class="cart-remove">X</a></td>
                                         </tr>
-                                        <tr>
-                                            <td class="product-thumbnail"><a href="#"><img src="images/product/3.png" alt="product img" /></a></td>
-                                            <td class="product-name"><a href="#">Tên Sản Phẩm</a></td>
-                                            <td class="product-price"><span class="amount">900.000</span></td>
-                                            <td class="product-quantity"><input type="number" value="1" /></td>
-                                            <td class="product-subtotal">900.000</td>
-                                            <td class="product-remove"><a href="#">X</a></td>
-                                        </tr>
+                                     <th:block>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="row">
                                 <div class="col-md-8 col-sm-7 col-xs-12">
                                     <div class="buttons-cart">
-                                        <input type="submit" value="Cập Nhật" />
+                                        <input class="cart-clear" type="submit" value="Clear" />
                                         <a href="#">Tiếp Tục Mua Hàng</a>
                                     </div>
                                     <div class="coupon">

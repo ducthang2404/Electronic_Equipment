@@ -53,8 +53,9 @@
 																	class="ti-plus"></span>
 																</a>
 															</li>
-															<li><a title="Thêm" th:attr="ng-click=@{|cart.add(${product.id})|}"><span
-																	class="ti-shopping-cart"></span>
+															<li>
+																
+																<a title="Thêm" th:id="${product.id}" class="cart-add"><span class="ti-shopping-cart"></span>
 																</a>
 															</li>
 															<li><a title="Yêu Thích" href="wishlist.html"><span
