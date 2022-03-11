@@ -26,4 +26,10 @@ public class StaffServiceImpl implements StaffService {
 		staffDAO.save(staff);
 	}
 
+	@Override
+	public void delStaff(Integer id) {
+		staffDAO.deleteById(id);
+		
+	}
+
 }

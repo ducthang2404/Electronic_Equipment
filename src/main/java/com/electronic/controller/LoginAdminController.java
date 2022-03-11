@@ -23,7 +23,9 @@ public class LoginAdminController {
 
 	@RequestMapping(value = "/user/index", method = RequestMethod.GET)
 	public String index(Model model, Principal principal, HttpSession session) {
-		//session.setAttribute(name, value);
+		User loginedUser = (User) ((Authentication) principal).getPrincipal();
+		String userInfo = WebUtils.toString(loginedUser);
+		model.addAttribute("userInfo", userInfo);
 		return "index";
 	}
 	

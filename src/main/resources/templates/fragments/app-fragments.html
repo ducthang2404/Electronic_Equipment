@@ -34,7 +34,7 @@
 									class="nav-badge-btm"></span></a></li>
 							<li><a href="ProductOutbound.html">Xuất kho</a></li>
 						</ul> <!-- //nav-second-level --></li>
-					<li><a th:href="@{/admin/staff}"><i class="fa fa-table nav_icon"></i>Nhân
+					<li><a th:href="@{/user/staff}"><i class="fa fa-table nav_icon"></i>Nhân
 							sự</a></li>
 					<li><a href="Revenue.html"><i class="fa fa-table nav_icon"></i>Thống
 							kê doanh thu</a></li>
@@ -91,7 +91,7 @@
 
 								<div class="user-name">
 									<p th:utext="${#request.userPrincipal.name}"></p>
-									<span style="color: orange;">Quyền nhân viên</span>
+									<span   th:if="${userInfo != null}" th:utext="${userInfo}"  style="color: orange;">Quyền nhân viên</span>
 								</div> <i class="fa fa-angle-down lnr"></i> <i
 								class="fa fa-angle-up lnr"></i>
 								<div class="clearfix"></div>

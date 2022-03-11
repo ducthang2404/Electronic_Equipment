@@ -48,7 +48,7 @@
 									<div class="col-md-4">
 										<a style="float: right;"
 											class="btn btn-mini btn-primary btncreate"
-										th:href="@{/admin/createStaff}"> <i
+										th:href="@{/user/createStaff}"> <i
 											class="glyphicon glyphicon-plus-sign"></i> Thêm tài khoản
 										</a>
 									</div>
@@ -90,9 +90,9 @@
 														title="Chỉnh sửa thông tin sản phẩm"> <i
 														class="glyphicon glyphicon-edit"></i>
 													</a>
-													<!-- <a th:href="@{'/deluser/'+${staff.id}}" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-minier btn-danger" title="Xóa sản phẩm">
-														<i class="glyphicon glyphicon-trash"></i>
-													</a> -->
+													 <a th:href="@{'/user/delStaff'+${staff.id}}" onclick="return confirm('Are you sure you want to delete this item?');" class="btn btn-minier btn-danger" title="Xóa sản phẩm">
+														<i class="glyphicon glyphicon-trash">	</i>
+													</a> 
 												</div>
 											</td>
 
